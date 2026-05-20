@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform education with AI. Esti.AI Lab provides cutting-edge AI solutions for educational institutions.">
+    <meta name="theme-color" content="#0066ff">
+    <title>estilab.ai - EdTech AI Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --primary-light: #e6f0ff;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+            --success: #10b981;
+            --success-light: #d1fae5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-900);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--gray-900);
+        }
+
+        .logo img {
+            height: 2.5rem;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .cta-button-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.5rem 1.5rem;
+        }
+
+        .cta-button-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0f4ff 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+        }
+
+        .hero-text .highlight {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .hero-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+        }
+
+        .hero-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card-title {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--gray-900);
+        }
+
+        section > .container > p {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 42rem;
+            margin: 0 auto 3rem;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .service-features li {
+            padding: 0.25rem 0;
+        }
+
+        .service-features li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            background-color: var(--gray-50);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .solution-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-features {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .solution-features li:before {
+            content: "• ";
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+            color: var(--white);
+        }
+
+        .statistics h2 {
+            color: var(--white);
+        }
+
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Partners Section */
+        .partners {
+            background-color: var(--white);
+        }
+
+        .partners-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .partners-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--gray-50);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .about-feature h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .about-feature p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            transition: box-shadow 0.3s;
+        }
+
+        .contact-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .contact-item p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .form-submit:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .form-privacy {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .success-message {
+            background-color: var(--success-light);
+            border: 1px solid var(--success);
+            color: var(--gray-900);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--gray-900);
+            color: var(--gray-300);
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--gray-800);
+            border-radius: 0.5rem;
+            color: var(--gray-300);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .solutions-grid,
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button,
+            .cta-button-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663196943624/dbnzzguSZTtXqDzQFpLEqf/estilab-logo_2ebaa2c7.png" alt="Esti.AI Lab">
+                </a>
+                <ul class="nav-links">
+                    <li><a onclick="scrollToSection('services')">Services</a></li>
+                    <li><a onclick="scrollToSection('solutions')">Solutions</a></li>
+                    <li><a onclick="scrollToSection('about')">About</a></li>
+                    <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                </ul>
+                <button class="cta-button" onclick="scrollToSection('contact')">Get in Touch</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform<br>Education with<br><span class="highlight">AI</span></h1>
+                    <p>Esti.AI Lab empowers educational institutions with cutting-edge AI solutions, intelligent systems, and strategic consulting to revolutionize learning experiences.</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="scrollToSection('services')">Explore Services →</button>
+                        <button class="cta-button cta-button-outline" onclick="scrollToSection('contact')">Get in Touch</button>
+                    </div>
+                </div>
+                <div class="hero-cards">
+                    <div class="hero-card">
+                        <div class="hero-card-icon">🤖</div>
+                        <div class="hero-card-title">AI Strategy</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-icon">📊</div>
+                        <div class="hero-card-title">Analytics</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-icon">🎓</div>
+                        <div class="hero-card-title">Learning</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-icon">🔧</div>
+                        <div class="hero-card-title">Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section style="padding: 2rem 0; background-color: #f9fafb; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+        <div class="container">
+            <p style="text-align: center; font-size: 0.875rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">TRUSTED BY LEADING INSTITUTIONS</p>
+            <div class="statistics-grid" style="margin-top: 1.5rem; gap: 1rem;">
+                <div class="stat-item" style="color: var(--gray-900);">
+                    <div class="stat-number" style="color: var(--primary);">50+</div>
+                    <div class="stat-label" style="color: var(--gray-600);">Institutions</div>
+                </div>
+                <div class="stat-item" style="color: var(--gray-900);">
+                    <div class="stat-number" style="color: var(--primary);">100+</div>
+                    <div class="stat-label" style="color: var(--gray-600);">AI Solutions</div>
+                </div>
+                <div class="stat-item" style="color: var(--gray-900);">
+                    <div class="stat-number" style="color: var(--primary);">10K+</div>
+                    <div class="stat-label" style="color: var(--gray-600);">Students Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Core Services</h2>
+            <p>Comprehensive solutions designed to transform your educational institution with AI and technology</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">🤖</div>
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>Expert guidance on developing AI roadmaps and integrating AI into your educational operations and processes.</p>
+                    <ul class="service-features">
+                        <li>Strategic Planning</li>
+                        <li>Implementation Roadmap</li>
+                        <li>Change Management</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">💡</div>
+                    <h3>Custom AI Solutions</h3>
+                    <p>LLM-based digital tutors, intelligent administrative systems, and smart content generation tailored to your needs.</p>
+                    <ul class="service-features">
+                        <li>Digital Tutors</li>
+                        <li>Admin Automation</li>
+                        <li>Content Generation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🔧</div>
+                    <h3>Platform Services</h3>
+                    <p>Cutting-edge AI and big data foundational platforms enabling rapid development of intelligent applications.</p>
+                    <ul class="service-features">
+                        <li>AI Platforms</li>
+                        <li>Data Analytics</li>
+                        <li>Real-time Insights</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">🎨</div>
+                    <h3>Professional Services</h3>
+                    <p>Full-spectrum software development including UI/UX design, architecture, and deployment for EdTech solutions.</p>
+                    <ul class="service-features">
+                        <li>UI/UX Design</li>
+                        <li>System Architecture</li>
+                        <li>Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <h2>EdTech Solutions</h2>
+            <p>Purpose-built products designed specifically for modern educational institutions</p>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🎓</div>
+                    <h3>Smart Classroom AI</h3>
+                    <p>Intelligent classroom management system powered by AI for real-time student engagement tracking and personalized learning experiences.</p>
+                    <ul class="solution-features">
+                        <li>Real-time Engagement</li>
+                        <li>Personalized Learning</li>
+                        <li>Teacher Insights</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📋</div>
+                    <h3>Intelligent Admissions System</h3>
+                    <p>Automate and streamline your admissions process with AI-driven candidate evaluation and data-driven decision making.</p>
+                    <ul class="solution-features">
+                        <li>Automated Screening</li>
+                        <li>Bias Reduction</li>
+                        <li>Faster Decisions</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">✅</div>
+                    <h3>AI-Powered Assessment Tools</h3>
+                    <p>Advanced assessment platform with intelligent question generation, automated grading, and detailed performance analytics.</p>
+                    <ul class="solution-features">
+                        <li>Auto Grading</li>
+                        <li>Smart Questions</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>Learning Analytics Platform</h3>
+                    <p>Comprehensive analytics dashboard providing actionable insights into student performance, learning patterns, and institutional metrics.</p>
+                    <ul class="solution-features">
+                        <li>Student Insights</li>
+                        <li>Trend Analysis</li>
+                        <li>Predictive Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <div class="statistics-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Educational Institutions<br>Serving leading schools and universities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">AI Solutions Deployed<br>Across various educational sectors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Students Impacted<br>Benefiting from our AI-powered learning</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Combined Expertise<br>In education and AI technology</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2>Trusted Partners</h2>
+            <div class="partners-container">
+                <p class="partners-label">TRUSTED BY LEADING EDUCATIONAL INSTITUTIONS</p>
+                <div class="partners-grid">
+                    <div class="partner-logo">🏫 Global Education Institute</div>
+                    <div class="partner-logo">💻 Tech Learning Academy</div>
+                    <div class="partner-logo">🚀 Innovation School Network</div>
+                    <div class="partner-logo">🎓 Digital University Consortium</div>
+                    <div class="partner-logo">✨ Smart Education Foundation</div>
+                    <div class="partner-logo">🤖 AI Learning Alliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Esti.AI Lab</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transforming Education Through AI Innovation</h3>
+                    <p>Esti.AI Lab is a UAE-based educational technology company dedicated to transforming how institutions leverage artificial intelligence and advanced technology to enhance learning outcomes.</p>
+                    <p>Founded on the belief that AI should empower educators and students, we develop intelligent solutions that address real challenges in modern education. From AI-powered tutoring systems to intelligent administrative platforms, our products are designed with educators and learners in mind.</p>
+                    <p>Our team brings together expertise in artificial intelligence, software engineering, educational psychology, and institutional management. We work closely with educational leaders across the UAE and MENA region to create solutions that truly make a difference.</p>
+                </div>
+                <div>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <h4>🌍 UAE-Based Expertise</h4>
+                            <p>Deep understanding of the Middle Eastern education landscape and regulatory environment.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>🎯 AI & Education Specialists</h4>
+                            <p>Team combining cutting-edge AI research with practical educational experience.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>✓ Proven Track Record</h4>
+                            <p>Successfully deployed solutions across diverse educational institutions.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>⚙️ Customization First</h4>
+                            <p>Every solution is tailored to your institution's unique needs and goals.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>🚀 Continuous Innovation</h4>
+                            <p>Constantly evolving our platform with the latest AI and EdTech advancements.</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>🤝 Dedicated Support</h4>
+                            <p>24/7 technical support and ongoing consultation for your success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Ready to transform your institution with AI? Let's talk about how Esti.AI Lab can help.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@estiedtech.com">info@estiedtech.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <h4>Location</h4>
+                        <p>United Arab Emirates</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏱️</div>
+                        <h4>Response Time</h4>
+                        <p>We typically respond within 24 hours</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="success-message" id="successMessage">
+                        <h3>✓ Thank You!</h3>
+                        <p>We've received your message and will get back to you soon.</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mredpevg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required minlength="2" placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization" placeholder="Your institution name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required minlength="10" placeholder="Tell us about your needs and how we can help..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
+
+                        <p class="form-privacy">We respect your privacy. Your information will only be used to respond to your inquiry.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Esti.AI Lab</h4>
+                    <p>Transforming education through AI innovation.</p>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="Facebook">f</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@estiedtech.com">info@estiedtech.com</a></li>
+                        <li><a href="#contact">Get in Touch</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Esti.AI Lab. All rights reserved. | Transforming education through AI innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        });
+
+        // Show success message when form is submitted via Formspree
+        window.addEventListener('message', function(event) {
+            if (event.origin !== 'https://formspree.io') return;
+            if (event.data.type === 'formspree.submission.success') {
+                document.getElementById('successMessage').classList.add('show');
+                document.getElementById('contactForm').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('contactForm').style.display = 'block';
+                    document.getElementById('successMessage').classList.remove('show');
+                    document.getElementById('contactForm').reset();
+                    const submitBtn = document.getElementById('submitBtn');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
