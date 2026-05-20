@@ -87,15 +87,34 @@ Error generating stack: `+l.message+`
 
 </html>
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    // 1. 全局替换旧邮箱文本
-    document.body.innerHTML = document.body.innerHTML.replace(/info@estilab\.ai/g, 'info@estiedtech.com');
-    
-    // 2. 精准绑定你的 Formspree 表单
-    const form = document.querySelector('form');
-    if (form) {
-      form.action = 'https://formspree.io/f/mredpevg';
-      form.method = 'POST';
+  (function() {
+    function fixContent() {
+      // 1. 暴力替换页面上所有的旧邮箱文本
+      if (document.body && document.body.innerHTML.includes('info@estilab.ai')) {
+        document.body.innerHTML = document.body.innerHTML.replace(/info@estilab\.ai/g, 'info@estiedtech.com');
+      }
+      // 2. 暴力拦截并绑定 Formspree 表单
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        if (!form.action.includes('formspree.io')) {
+          form.action = 'https://formspree.io/f/mredpevg';
+          form.method = 'POST';
+        }
+      });
     }
-  });
+
+    // 网页加载时执行一次
+    window.addEventListener('DOMContentLoaded', fixContent);
+    window.addEventListener('load', fixContent);
+
+    // 开启全局监视器，只要网页内容发生变化（比如Manus脚本渲染出文字），立刻强制修改
+    const observer = new MutationObserver((mutations) => {
+      fixContent();
+    });
+    
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  })();
 </script>
