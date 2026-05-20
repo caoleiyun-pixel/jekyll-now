@@ -86,3 +86,16 @@ Error generating stack: `+l.message+`
   </body>
 
 </html>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1. 全局替换旧邮箱文本
+    document.body.innerHTML = document.body.innerHTML.replace(/info@estilab\.ai/g, 'info@estiedtech.com');
+    
+    // 2. 精准绑定你的 Formspree 表单
+    const form = document.querySelector('form');
+    if (form) {
+      form.action = 'https://formspree.io/f/mredpevg';
+      form.method = 'POST';
+    }
+  });
+</script>
